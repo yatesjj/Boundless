@@ -1,0 +1,259 @@
+GIMP Palette
+Name: BoundlessColorPalette
+Columns: 0
+# Generated from Boundless color data
+27 27 27 Black
+17 29 37 Night Azure
+5 29 50 Shadow Cerulean
+46 56 71 Dark Cerulean
+54 54 77 Dark Cobalt
+65 52 65 Dark Berry
+73 47 73 Dark Violet
+76 42 91 Dark Lilac
+99 16 99 Strong Violet
+95 30 77 Strong Magenta
+110 13 54 Strong Fuchsia
+105 26 35 Strong Cherry
+90 41 35 Dark Red
+79 48 35 Dark Orange
+73 50 50 Dark Rose
+82 44 55 Dark Fuchsia
+60 4 27 Shadow Fuchsia
+46 17 38 Night Berry
+43 21 27 Night Fuchsia
+37 25 20 Night Orange
+47 20 3 Shadow Orange
+63 3 3 Shadow Red
+115 12 12 Strong Red
+171 23 23 Deep Red
+158 44 57 Hot Cherry
+131 68 68 Silk Cherry
+110 78 82 Oxide Rose
+110 79 67 Silk Orange
+100 83 67 Silk Mustard
+117 78 42 Hot Sepia
+112 81 22 Deep Mustard
+99 85 42 Hot Tan
+88 88 56 Silk Yellow
+89 89 22 Deep Yellow
+64 95 42 Hot Moss
+22 100 22 Deep Green
+11 65 11 Strong Green
+44 60 34 Dark Green
+57 57 34 Dark Yellow
+58 58 11 Strong Yellow
+73 52 11 Strong Mustard
+65 54 35 Dark Mustard
+36 26 3 Shadow Mustard
+29 29 3 Shadow Yellow
+19 30 19 Night Green
+4 31 31 Shadow Turquoise
+44 58 58 Dark Turquoise
+62 62 62 Dark Grey
+79 87 93 Oxide Azure
+99 99 99 Oxide Grey
+87 87 77 Oxide Yellow
+77 90 77 Oxide Green
+67 93 67 Silk Mint
+58 93 83 Silk Teal
+25 96 96 Deep Turquoise
+26 94 110 Deep Slate
+27 92 125 Deep Azure
+30 87 154 Deep Cerulean
+67 83 143 Silk Cobalt
+73 87 111 Silk Cerulean
+84 84 114 Oxide Blue
+99 80 99 Oxide Violet
+111 73 111 Silk Berry
+115 66 136 Silk Lilac
+93 70 162 Silk Lavender
+109 37 213 Deep Lavender
+134 33 179 Deep Lilac
+148 30 148 Deep Violet
+143 49 118 Hot Magenta
+136 60 97 Silk Magenta
+165 25 84 Deep Fuchsia
+190 83 117 Warm Fuchsia
+202 67 138 Warm Magenta
+224 38 116 Fuchsia
+227 36 90 Rose
+197 81 92 Warm Cherry
+230 35 64 Cherry
+232 35 35 Red
+200 81 61 Warm Red
+168 101 94 Stale Red
+163 105 79 Warm Orange
+144 113 94 Stale Sepia
+141 115 79 Warm Mustard
+127 119 94 Stale Tan
+121 121 79 Warm Yellow
+105 125 93 Stale Moss
+81 129 107 Warm Viridian
+37 133 117 Teal
+36 134 98 Viridian
+34 136 73 Mint
+34 137 33 Green
+90 130 60 Warm Moss
+123 123 34 Yellow
+139 117 34 Tan
+153 112 34 Mustard
+168 105 34 Sepia
+183 95 34 Orange
+234 123 47 Vivid Orange
+208 137 80 Light Sepia
+209 135 103 Light Orange
+184 145 122 Pale Sepia
+166 151 138 Ashen Taupe
+154 154 138 Ashen Yellow
+163 153 121 Pale Tan
+177 150 103 Light Mustard
+171 153 80 Light Tan
+156 156 102 Light Yellow
+136 161 121 Pale Moss
+139 158 144 Ashen Mint
+140 157 157 Ashen Turquoise
+139 139 139 Ashen Grey
+109 121 126 Rust Slate
+97 124 124 Stale Turquoise
+116 121 107 Rust Lime
+129 117 107 Rust Taupe
+147 109 118 Rust Fuchsia
+136 111 136 Rust Violet
+159 100 141 Stale Berry
+168 89 168 Warm Violet
+143 104 166 Stale Lilac
+111 111 191 Warm Blue
+101 101 240 Blue
+139 86 240 Lavender
+178 54 240 Lilac
+201 44 201 Violet
+245 82 245 Vivid Violet
+204 116 245 Vivid Lilac
+172 133 245 Vivid Lavender
+143 143 245 Vivid Blue
+148 148 209 Light Blue
+168 144 191 Pale Lilac
+185 134 209 Light Lilac
+193 135 177 Pale Berry
+174 145 165 Ashen Berry
+179 145 145 Ashen Red
+216 181 181 Cool Red
+229 178 160 Stark Orange
+250 170 138 Bright Orange
+250 172 113 Bright Sepia
+250 174 78 Bright Taupe
+236 180 59 Bright Mustard
+217 188 59 Bright Tan
+195 195 59 Bright Yellow
+170 202 59 Bright Lime
+133 209 59 Bright Moss
+59 217 59 Bright Green
+127 208 127 Stark Green
+61 214 146 Bright Viridian
+104 208 176 Stark Viridian
+151 201 163 Cool Mint
+154 199 183 Cool Teal
+134 201 201 Stark Turquoise
+65 208 208 Bright Turquoise
+66 206 228 Bright Slate
+79 203 249 Bright Azure
+130 196 249 Stark Azure
+159 190 249 Bright Cerulean
+183 183 249 Bright Blue
+197 183 226 Stark Lavender
+187 187 214 Cool Blue
+202 184 202 Weary Violet
+214 178 214 Cool Violet
+217 174 237 Bright Lilac
+238 167 219 Bright Magenta
+249 157 249 Bright Violet
+229 111 197 Light Berry
+247 104 151 Vivid Fuchsia
+216 127 152 Light Fuchsia
+218 129 129 Light Red
+248 109 109 Vivid Cherry
+248 111 87 Vivid Red
+250 168 168 Bright Red
+249 166 188 Bright Fuchsia
+252 215 252 Luminous Violet
+237 222 237 Cold Berry
+224 224 252 Luminous Blue
+204 230 252 Luminous Azure
+205 231 237 Cold Slate
+169 237 252 Luminous Slate
+157 196 206 Cool Slate
+173 194 190 Weary Teal
+182 182 182 Cool Grey
+203 187 171 Weary Mustard
+218 183 152 Cool Taupe
+218 184 128 Stark Mustard
+199 189 150 Cool Tan
+190 191 171 Weary Yellow
+181 195 150 Cool Lime
+168 200 127 Stark Lime
+193 193 127 Stark Yellow
+231 231 153 Crisp Yellow
+214 237 120 Crisp Lime
+181 246 72 Luminous Moss
+129 253 129 Luminous Green
+174 243 174 Crisp Green
+210 235 180 Cold Lime
+187 238 213 Cold Viridian
+160 241 230 Cold Teal
+126 248 217 Crisp Teal
+98 252 191 Luminous Viridian
+79 249 249 Luminous Turquoise
+51 169 169 Vivid Turquoise
+108 163 163 Light Turquoise
+52 167 189 Vivid Slate
+54 164 211 Vivid Azure
+111 160 186 Light Azure
+129 156 187 Pale Cerulean
+109 151 245 Vivid Cobalt
+57 158 244 Vivid Cerulean
+42 123 193 Cerulean
+40 127 166 Azure
+39 130 148 Slate
+37 131 132 Turquoise
+50 171 151 Vivid Teal
+105 166 139 Light Viridian
+48 173 128 Vivid Viridian
+47 175 96 Vivid Mint
+46 176 46 Vivid Green
+117 167 79 Vivid Moss
+137 164 46 Vivid Lime
+158 158 46 Vivid Yellow
+189 147 46 Vivid Mustard
+253 225 127 Luminous Tan
+248 224 174 Crisp Tan
+238 225 200 Cold Tan
+252 221 197 Luminous Taupe
+252 219 219 Luminous Red
+226 226 226 White
+170 192 214 Cool Azure
+152 152 173 Ashen Blue
+117 117 144 Rust Blue
+100 121 147 Stale Cerulean
+48 112 240 Cobalt
+34 75 195 Deep Cobalt
+55 55 232 Deep Blue
+25 25 172 Strong Blue
+20 46 138 Strong Cobalt
+17 55 105 Strong Cerulean
+15 59 84 Strong Azure
+14 61 73 Strong Slate
+13 62 62 Strong Turquoise
+12 64 43 Strong Viridian
+3 33 3 Shadow Green
+23 98 70 Deep Viridian
+70 90 90 Silk Turquoise
+51 51 97 Dark Blue
+22 22 65 Night Blue
+9 9 97 Shadow Blue
+66 36 124 Strong Lavender
+53 5 53 Shadow Violet
+34 23 43 Night Lilac
+89 43 11 Strong Orange
+135 68 22 Deep Orange
+137 66 43 Hot Orange
+233 233 72 Luminous Yellow

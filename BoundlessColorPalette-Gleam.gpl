@@ -1,0 +1,259 @@
+GIMP Palette
+Name: BoundlessColorPalette-Gleam
+Columns: 0
+# Generated from Boundless Gleam color data
+32  25  26 Black
+14  29  39 Night Azure
+0   29  52 Shadow Cerulean
+43  56  75 Dark Cerulean
+53  53  88 Dark Cobalt
+70  49  70 Dark Berry
+78  44  78 Dark Violet
+80  38  97 Dark Lilac
+104 0   104 Strong Violet
+100 23  80 Strong Magenta
+114 0   54 Strong Fuchsia
+110 19  31 Strong Cherry
+94  38  30 Dark Red
+82  47  30 Dark Orange
+81  46  46 Dark Rose
+88  40  55 Dark Fuchsia
+63  0   27 Shadow Fuchsia
+49  14  40 Night Berry
+47  19  27 Night Fuchsia
+39  24  18 Night Orange
+48  19  0  Shadow Orange
+65  0   0  Shadow Red
+119 0   0  Strong Red
+177 0   0  Deep Red
+165 34  52 Hot Cherry
+140 62  62 Silk Cherry
+121 73  80 Oxide Rose
+115 77  61 Silk Orange
+103 82  61 Silk Mustard
+120 77  32 Hot Sepia
+114 80  0  Deep Mustard
+100 85  32 Hot Tan
+88  88  49 Silk Yellow
+89  89  0  Deep Yellow
+61  96  32 Hot Moss
+0   101 0  Deep Green
+0   66  0  Strong Green
+42  61  29 Dark Green
+57  57  29 Dark Yellow
+58  58  0  Strong Yellow
+74  52  0  Strong Mustard
+66  54  30 Dark Mustard
+37  26  0  Shadow Mustard
+29  29  0  Shadow Yellow
+16  31  16 Night Green
+0   31  31 Shadow Turquoise
+40  59  59 Dark Turquoise
+72  59  61 Dark Grey
+75  88  97 Oxide Azure
+114 94  98 Oxide Grey
+87  87  72 Oxide Yellow
+71  92  71 Oxide Green
+61  95  61 Silk Mint
+51  94  82 Silk Teal
+0   97  97 Deep Turquoise
+0   95  113 Deep Slate
+0   93  129 Deep Azure
+0   87  162 Deep Cerulean
+61  82  153 Silk Cobalt
+68  87  118 Silk Cerulean
+82  82  128 Oxide Blue
+106 76  106 Oxide Violet
+118 68  118 Silk Berry
+121 60  145 Silk Lilac
+95  64  177 Silk Lavender
+114 1   232 Deep Lavender
+141 0   191 Deep Lilac
+155 1   155 Deep Violet
+150 39  122 Hot Magenta
+143 53  99 Silk Magenta
+171 0   84 Deep Fuchsia
+200 74  117 Warm Fuchsia
+211 54  141 Warm Magenta
+232 1   116 Fuchsia
+235 0   86 Rose
+207 72  86 Warm Cherry
+238 0   55 Cherry
+240 0   0  Red
+207 75  48 Warm Red
+178 96  86 Stale Red
+169 102 69 Warm Orange
+150 111 86 Stale Sepia
+144 114 69 Warm Mustard
+129 119 86 Stale Tan
+121 121 70 Warm Yellow
+101 126 85 Stale Moss
+72  131 105 Warm Viridian
+1   134 117 Teal
+2   135 96 Viridian
+0   137 67 Mint
+3   139 0  Green
+86  131 47 Warm Moss
+123 123 0  Yellow
+141 117 0  Tan
+156 111 0  Mustard
+172 104 0  Sepia
+188 92  0  Orange
+240 120 1  Vivid Orange
+214 135 64 Light Sepia
+217 132 91 Light Orange
+191 143 112 Pale Sepia
+172 150 129 Ashen Taupe
+155 155 129 Ashen Yellow
+165 153 111 Pale Tan
+181 149 91 Light Mustard
+173 153 64 Light Tan
+157 157 90 Light Yellow
+131 163 111 Pale Moss
+130 161 139 Ashen Mint
+132 159 159 Ashen Turquoise
+156 134 137 Ashen Grey
+103 122 130 Rust Slate
+90  125 125 Stale Turquoise
+114 122 100 Rust Lime
+134 116 100 Rust Taupe
+160 103 117 Rust Fuchsia
+145 106 145 Rust Violet
+169 93  147 Stale Berry
+177 80  177 Warm Violet
+150 98  179 Stale Lilac
+109 109 204 Warm Blue
+97  97  255 Blue
+142 78  255 Lavender
+187 24  255 Lilac
+210 0   210 Violet
+255 63  255 Vivid Violet
+210 109 255 Vivid Lilac
+174 130 255 Vivid Lavender
+141 141 255 Vivid Blue
+147 147 219 Light Blue
+172 141 201 Pale Lilac
+191 129 219 Light Lilac
+203 129 184 Pale Berry
+185 140 171 Ashen Berry
+191 140 140 Ashen Red
+223 179 179 Cool Red
+235 176 154 Stark Orange
+255 168 132 Bright Orange
+255 170 101 Bright Sepia
+255 172 52 Bright Taupe
+240 179 0  Bright Mustard
+219 188 0  Bright Tan
+196 196 0  Bright Yellow
+168 203 0  Bright Lime
+126 211 1  Bright Moss
+2   219 2  Bright Green
+112 211 112 Stark Green
+0   216 141 Bright Viridian
+84  210 174 Stark Viridian
+139 204 155 Cool Mint
+142 202 181 Cool Teal
+120 203 203 Stark Turquoise
+3   210 210 Bright Turquoise
+0   208 232 Bright Slate
+44  205 255 Bright Azure
+120 197 255 Stark Azure
+155 190 255 Bright Cerulean
+182 182 255 Bright Blue
+198 182 232 Stark Lavender
+186 186 221 Cool Blue
+209 181 209 Weary Violet
+221 175 221 Cool Violet
+221 171 243 Bright Lilac
+244 163 223 Bright Magenta
+255 152 255 Bright Violet
+238 102 203 Light Berry
+255 96  151 Vivid Fuchsia
+225 121 152 Light Fuchsia
+227 124 124 Light Red
+255 103 103 Vivid Cherry
+255 106 76 Vivid Red
+255 166 166 Bright Red
+255 163 188 Bright Fuchsia
+255 214 255 Luminous Violet
+240 221 240 Cold Berry
+224 224 255 Luminous Blue
+201 230 255 Luminous Azure
+199 232 240 Cold Slate
+161 238 255 Luminous Slate
+146 198 210 Cool Slate
+163 196 190 Weary Teal
+191 179 181 Cool Grey
+210 186 160 Weary Mustard
+225 181 140 Cool Taupe
+222 183 114 Stark Mustard
+202 189 138 Cool Tan
+190 192 160 Weary Yellow
+179 196 138 Cool Lime
+164 202 112 Stark Lime
+194 194 112 Stark Yellow
+232 232 136 Crisp Yellow
+212 238 97 Crisp Lime
+176 248 0 Luminous Moss
+116 255 116 Luminous Green
+163 246 163 Crisp Green
+206 237 165 Cold Lime
+175 241 209 Cold Viridian
+143 244 231 Cold Teal
+103 251 216 Crisp Teal
+66  255 187 Luminous Viridian
+0   251 251 Luminous Turquoise
+1   171 171 Vivid Turquoise
+96  165 165 Light Turquoise
+0   169 193 Vivid Slate
+0   165 217 Vivid Azure
+100 161 192 Light Azure
+120 157 196 Pale Cerulean
+100 151 255 Vivid Cobalt
+1   159 254 Vivid Cerulean
+0   124 201 Cerulean
+0   128 171 Azure
+1   131 151 Slate
+0   132 133 Turquoise
+1   173 151 Vivid Teal
+93  168 136 Light Viridian
+0   175 125 Vivid Viridian
+0   177 88 Vivid Mint
+1   178 1  Vivid Green
+112 169 63 Vivid Moss
+135 165 0  Vivid Lime
+158 158 0  Vivid Yellow
+192 146 0  Vivid Mustard
+255 225 114 Luminous Tan
+251 224 166 Crisp Tan
+241 225 192 Cold Tan
+255 220 193 Luminous Taupe
+255 218 218 Luminous Red
+229 225 226 White
+164 193 221 Cool Azure
+151 151 183 Ashen Blue
+116 116 157 Rust Blue
+93  122 154 Stale Cerulean
+3   111 255 Cobalt
+0   72  209 Deep Cobalt
+42  42  255 Deep Blue
+0   0   193 Strong Blue
+0   44  149 Strong Cobalt
+1   55  111 Strong Cerulean
+1   59  87 Strong Azure
+0   62  75 Strong Slate
+0   63  63 Strong Turquoise
+0   65  41 Strong Viridian
+0   33  0  Shadow Green
+0   99  68 Deep Viridian
+64  91  91 Silk Turquoise
+49  49  109 Dark Blue
+20  20  73 Night Blue
+0   0   110 Shadow Blue
+68  29  135 Strong Lavender
+56  0   56 Shadow Violet
+36  21  47 Night Lilac
+91  42  0  Strong Orange
+139 66  0  Deep Orange
+142 63  33 Hot Orange
+234 234 0  Luminous Yellow
