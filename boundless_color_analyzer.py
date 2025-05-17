@@ -277,45 +277,48 @@ def find_closest_color(r, g, b):
     
     return closest_color
 
-def get_chunk(row, col, image_width):
-    """Determine which 8x8 chunk the pixel belongs to."""
-    chunk_row = (row - 1) // 8  # 0-based chunk row index
-    chunk_col = (col - 1) // 8  # 0-based chunk col index
-    chunks_per_row = image_width // 8  # Number of chunks per row
+def get_chunk(row, col, image_width, chunk_size=8):
+    """Determine which chunk the pixel belongs to, based on image dimensions."""
+    chunk_row = (row - 1) // chunk_size  # 0-based chunk row index
+    chunk_col = (col - 1) // chunk_size  # 0-based chunk col index
+    chunks_per_row = (image_width + chunk_size - 1) // chunk_size  # Ceiling division
     chunk = (chunk_row * chunks_per_row) + chunk_col + 1  # 1-based chunk number
     return chunk
 
-def get_chunk_position(row, col):
-    """Get the row and column position within the chunk (1-8)."""
-    chunk_row_pos = ((row - 1) % 8) + 1  # 1-8 position within chunk
-    chunk_col_pos = ((col - 1) % 8) + 1  # 1-8 position within chunk
+def get_chunk_position(row, col, chunk_size=8):
+    """Get the row and column position within the chunk (1 to chunk_size)."""
+    chunk_row_pos = ((row - 1) % chunk_size) + 1  # 1-chunk_size position within chunk
+    chunk_col_pos = ((col - 1) % chunk_size) + 1  # 1-chunk_size position within chunk
     return chunk_row_pos, chunk_col_pos
 
-def process_image(image, drawable, file_path):
+def process_image(image, drawable, output_dir):
     """Main function to process the image and generate the CSV outputs."""
-    # Verify image dimensions are multiples of 8
-    if image.width % 8 != 0 or image.height % 8 != 0:
-        gimp.message("Error: Image dimensions must be multiples of 8x8 pixels!")
+    # Ensure the output directory exists
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Define file paths
+    pixel_csv_path = os.path.join(output_dir, "pixel_colors.csv")
+    sign_data_csv_path = os.path.join(output_dir, "pixel_sign_data.csv")
+
+    # Copy the image to the output directory
+    image_filename = "input_image.png"
+    image_path = os.path.join(output_dir, image_filename)
+    try:
+        # Save the current image as a PNG in the output directory
+        # For GIMP 2.10.38, we use the same pdb call, which is compatible
+        pdb.file_png_save(image, drawable, image_path, image_path, False, 9, False, False, False, False, False)
+        gimp.message("Image saved to " + image_path)
+    except Exception, e:
+        gimp.message("Error saving image: " + str(e))
         return
-    
-    # Check if file path is provided, otherwise use default
-    if not file_path or file_path.strip() == "":
-        file_path = os.path.join(os.path.expanduser("~"), "pixel_colors.csv")
-        gimp.message("No file path provided. Saving to default location: " + file_path)
-    
-    # Ensure .csv extension for pixel_colors.csv
-    if not file_path.lower().endswith('.csv'):
-        file_path += '.csv'
-    
-    # Derive pixel_sign_data.csv path from file_path
-    base_path = os.path.splitext(file_path)[0]
-    sign_data_path = base_path + "_sign_data.csv"
-    
+
     # Initialize variables
     pixel_data = []
     color_counts = {}  # Total counts for each color code
     chunk_color_counts = {}  # Counts of colors within each chunk
-    
+    chunk_size = 8  # Default chunk size (can be adjusted if needed)
+
     # Process each pixel
     for row in range(1, image.height + 1):
         for col in range(1, image.width + 1):
@@ -337,10 +340,10 @@ def process_image(image, drawable, file_path):
             code, name, _, _, _, hex_code = color
             
             # Determine chunk
-            chunk = get_chunk(row, col, image.width)
+            chunk = get_chunk(row, col, image.width, chunk_size)
             
             # Get chunk row and column positions
-            chunk_row_pos, chunk_col_pos = get_chunk_position(row, col)
+            chunk_row_pos, chunk_col_pos = get_chunk_position(row, col, chunk_size)
             
             # Update total color count
             color_counts[code] = color_counts.get(code, 0) + 1
@@ -357,15 +360,16 @@ def process_image(image, drawable, file_path):
                 'color': name,
                 'chunk': chunk,
                 'chunk_row': chunk_row_pos,
-                'chunk_col': chunk_col_pos
+                'chunk_col': chunk_col_pos,
+                'sign_section': chunk  # For now, using chunk as sign section; adjust as needed
             })
-    
+
     # Write to pixel_colors.csv
     try:
-        with open(file_path, 'wb') as csvfile:
+        with open(pixel_csv_path, 'wb') as csvfile:  # Use 'wb' for Python 2.7
             writer = csv.writer(csvfile)
             # Write header
-            writer.writerow(['Row', 'Column', 'Code', 'Color', 'Count', 'Chunk', 'C Row', 'C Column', 'C Count'])
+            writer.writerow(['Row', 'Column', 'Code', 'Color', 'Count', 'Chunk', 'C Row', 'C Column', 'C Count', 'Sign Section'])
             
             # Write pixel data
             for data in pixel_data:
@@ -380,74 +384,81 @@ def process_image(image, drawable, file_path):
                     color_counts[code],  # Total count in image
                     chunk,
                     data['chunk_row'],
-                    data['chunk_col'],  # Fixed typo from original (was data['col'])
-                    chunk_color_counts[chunk_key]  # Count in chunk
+                    data['chunk_col'],
+                    chunk_color_counts[chunk_key],  # Count in chunk
+                    data['sign_section']
                 ])
         
-        gimp.message("Processing complete. Output saved to " + file_path)
+        gimp.message("Pixel data saved to " + pixel_csv_path)
     
-    except IOError as e:
+    except IOError, e:
         gimp.message("Error saving file (pixel_colors.csv): " + str(e))
         return
-    
+
+    # Calculate the number of chunks
+    chunks_per_row = (image.width + chunk_size - 1) // chunk_size
+    num_rows_of_chunks = (image.height + chunk_size - 1) // chunk_size
+    total_chunks = chunks_per_row * num_rows_of_chunks
+
+    # Prepare sign section data for pixel_sign_data.csv
+    sign_sections = []
+    for chunk in range(1, total_chunks + 1):
+        # Find all pixels in this chunk
+        chunk_pixels = [p for p in pixel_data if p['chunk'] == chunk]
+        # Process each chunk column (1-8)
+        for chunk_col in range(1, chunk_size + 1):
+            text_lines = []
+            # Process each chunk row (1-8) for this chunk column
+            for chunk_row in range(1, chunk_size + 1):
+                # Find the pixel at this chunk position
+                pixel = next((p for p in chunk_pixels 
+                              if p['chunk_row'] == chunk_row and p['chunk_col'] == chunk_col), None)
+                if pixel:
+                    # Calculate absolute row and column in image
+                    chunk_row_idx = (chunk - 1) // chunks_per_row
+                    chunk_col_idx = (chunk - 1) % chunks_per_row
+                    abs_row = chunk_row_idx * chunk_size + chunk_row
+                    abs_col = chunk_col_idx * chunk_size + chunk_col
+                    # Only include if within image bounds
+                    if abs_row <= image.height and abs_col <= image.width:
+                        text_lines.append("%d,%d" % (abs_row, abs_col))
+                        text_lines.append(str(pixel['code']))
+                        # Add two blank lines unless it's the last row
+                        if chunk_row < chunk_size:
+                            text_lines.append('')
+                            text_lines.append('')
+            if text_lines:  # Only add if there is data (i.e., within image bounds)
+                sign_data = '\n'.join(text_lines)
+                sign_sections.append([sign_data, chunk, chunk_col])
+
     # Write to pixel_sign_data.csv
     try:
-        with open(sign_data_path, 'wb') as csvfile:
+        with open(sign_data_csv_path, 'wb') as csvfile:  # Use 'wb' for Python 2.7
             writer = csv.writer(csvfile)
             # Write header
-            writer.writerow(['Sign Data'])
+            writer.writerow(['Sign Data', 'Chunk', 'Chunk Column'])
             
-            # Calculate number of sections (based on height)
-            sections = image.height // 8
-            chunks_per_row = image.width // 8
-            
-            # Prepare data for each chunk (8x8 block)
-            sign_sections = []
-            for chunk in range(1, (sections * chunks_per_row) + 1):
-                # Find all pixels in this chunk
-                chunk_pixels = [p for p in pixel_data if p['chunk'] == chunk]
-                text_lines = []
-                # Process each position in the 8x8 chunk
-                for chunk_row in range(1, 9):
-                    for chunk_col in range(1, 9):
-                        # Find the pixel at this chunk position
-                        pixel = next((p for p in chunk_pixels 
-                                    if p['chunk_row'] == chunk_row and p['chunk_col'] == chunk_col), None)
-                        if pixel:
-                            # Calculate absolute row and column in image
-                            abs_row = ((chunk - 1) // chunks_per_row) * 8 + chunk_row
-                            abs_col = ((chunk - 1) % chunks_per_row) * 8 + chunk_col
-                            text_lines.append("%d,%d" % (abs_row, abs_col))
-                            text_lines.append(str(pixel['code']))
-                            # Add two blank lines unless it's the last position
-                            if chunk_row < 8 or chunk_col < 8:
-                                text_lines.append('')
-                                text_lines.append('')
-                # Join all lines for this chunk into a single cell
-                section_data = '\n'.join(text_lines)
-                sign_sections.append([section_data])
-            
-            # Write each chunk's data as a row in the single column
+            # Write each sign section row
             writer.writerows(sign_sections)
         
-        gimp.message("Sign data output saved to " + sign_data_path)
+        gimp.message("Sign data output saved to " + sign_data_csv_path)
     
-    except IOError as e:
+    except IOError, e:
         gimp.message("Error saving file (pixel_sign_data.csv): " + str(e))
         return
 
-# Register the plug-in
+# Register the plug-in with a directory path parameter
 register(
     "python_fu_boundless_color_analyzer",
     "Analyze image for Boundless color palette matches",
-    "Processes images with dimensions that are multiples of 8x8 pixels, matches pixels to Boundless colors, and outputs to CSV",
+    "Matches pixels to Boundless colors and outputs to CSV",
     "Your Name",
     "Your Name",
     "2025",
     "<Image>/Filters/Boundless Color Analyzer...",
     "RGB*",
     [
-        (PF_STRING, "file_path", "Save file path (e.g., C:\\Users\\yates\\pixel_colors.csv)", ""),
+        (PF_DIRNAME, "output_dir", "Output directory", os.path.expanduser("~"))
     ],
     [],
     process_image
